@@ -1,0 +1,128 @@
+*****************
+*****注意事项
+1、项目编码格式
+2、注释
+3、页面具体功能和相互跳转
+4、servlet向jsp页面传递数据时的范围：session，但是页面刷新后提示仍在？？？？？？？？？？？
+5、属性不是String类型，在jsp页面获得值以后要转换 
+6、保留doPost，直接调用doGet即可
+7、赋值servlet页面后要记得配置，还要修改跳转路径
+8、从页面获得数据时转换编码格式，可以打印出来传过来的具体是什么
+9、List数组可以同时存放多类型数据？？？？？？？？？？？？？？
+10、html页面表格使用bootstrap后表格大小用style修改
+11、input输入框一定要加name值，方便获得数据
+12、form中button好像不能提交数据
+13、查询后要回写数据到输入框或单选、复选框
+14、查询页面上可以放入隐藏来存id，方便传入函数中作参数
+15、jquery引入后，使用$("#id").click(function(){     })绑定点击事件
+16、button可以直接绑定点击事件，传入参数达到修改或删除；
+       用<a href>跳转时，通常是不带参数过去的单纯的跳转页面，例如跳到添加页面
+17、新建页面(jsp)或者项目是要设置UTF-8
+18、add适合html，只需要新增数据；而update适合jsp，需要回写要修改的原信息
+19、查出来只有一个,就要if(rs.next())判断，不为空就返回；
+       查询多个就要while(rs.next())
+20、赋值数据库查询语句，注意更改  表名
+21、直接在按钮跳转：οnclick="javascript:window.location.href='/MyShopSystem/ListServlet.do'"
+22、$("input").addClass("btn btn-default"); 用jQuery语法给所有input框添加相同bootstrap的样式
+23、select * from product where 1=1  and sdesc like '%为%机%';  条件一定要加' 
+24、str..replace(" ", "")将字符串所有空格去除
+23、Null与任何字符串拼接后的结果还是Null
+25、input框valule值要加" "，等等
+26、用jQuery 如何获取 input 输入框的值   $("#one").val()
+27、bootstrap的fonts文件夹放在webroot根目录下
+28、搜索框点重置全部清空
+29、先把数据设置到共享范围，再对数据赋值属性有效？  可以！
+30、var totalPage=document.getElementById("totalPage").innerText;  获得span等标签里的值
+        var goPage=document.getElementById("goPage").value;   获得input输入框中的值
+31、引入jQuery后到底能不能用onclick-------------------可以
+32、<a> 标签不能传参数跳转是，就绑定点击事件  window.location.href='/MyShopSystem/DoGoPageServlet.do?goPage='+goPage;
+33、SELECT * FROM product limit 0,1;  ===>   从第0条开始查询后面的1条记录，查出来第一条记录
+ 34、int start=(page.getCurrentPage()-1)*page.getPageContent();  //获得第几条开始  
+         limit start,pageContent(每页显示多少条)
+35、<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   jsp页面用到<c>时
+36、购物车中无需商品其他信息，只需商品id，可以设置get方法，让EL表达式通过id查到商品后获得
+37、每个<td>的id值不同的时候，就可以绑定onclick(id)传入id！！！！！！！！！！！！！！！！
+38、ajax可以不刷新页面验证用户、密码、修改购物车商品数量  servlet页面接收数据之前要设置响应编码格式
+39、java判断字符串相同什么时候用==(js中用？？？)
+40、用ajax不刷新页面，鼠标失去焦点判断输入为空，判断用户名重复   判断各个输入的先后顺序；输入为空或者错误怎样先后
+41、request.setCharacterEncoding("UTF-8"); response.setContentType("text/html;charset=UTF-8");  统一字符集编码后，不要再转换
+42、新建jsp页面：UTF-8 ；prefix="c"；引入JQuery；
+43、注意新建实体(Product)还是查找实体，如果只根据个别条件(id,price..)新建实体(Product)而不是去已有库中查找，面根据该新建实体就无法获得其他信息(数量,描述..)
+44、$("#id").click(function(event){     //event可有可无
+	  event.preventDefault();   //阻止发生默认行为（跳转或者提交）
+	});
+45、id="pay${o.oid }" onclick="pay(${o.oid })"    $("#id")和onclick一起使用可以现获得该元素的oid，再通过oid获得该元素的id
+46、数据库表中自身也可以排序，全部查出来后回有效果
+47、js中的某个函数或者判断使用了return，js会执行后面的语句？？？？？？？
+48、jsp输入框为空时，获得后用""判断输入为空不是null
+
+
+步骤：
+1、先建表：
+实体
+     用户User        主键id要自动递增才可以赋空值      有getOrders方法，可以直接获得所有订单，获得登录用户即可;只会将本页面新添加的订单给该用户，而不会去数据库查已经存在的订单
+     商品Product   注意id为int类型    主键id要自动递增才可以赋空值   
+     订单Order为数据库关键字  用OrderEntity    注意oid为long类型     订单编号生成，不用自动递增   
+     订单详情OrderDetail    
+     购物车Shopcart   统计所有订单的总价
+***实体之间对应关系
+     管理员才可以修改商品信息？ 用户修改购物车信息
+
+
+2、实现DAO层与数据库的操作
+insert插入操作时，要写null给空列
+去数据库删除时，可以new Product(id),这个对象作参数传给dao删除；有些情况必须先在数据库中查到select()该对象才可操作
+
+
+3、jsp展示页面
+user_regist.jsp页面输入的手机号后台要转换为int
+往数据库中直接写入 男 女 需要在单选框中给给个选项赋值name="男/女"
+展示的是商品页面，对商品进行条件查询
+将查询条件会写到页面上
+
+怎样将购买商品id传给购物车
+所有购买操作绑定到一个用户上
+商品可以查看，但是到购物车页面需要验证登录
+价格区间查询
+删除购买，清空购物车
+
+点击加入购物车后，不跳转，但是把商品id发送到servlet
+
+怎样将 登录错误信息 刷新后失效
+
+user_login  点击”登录“按钮后，ajax将输入传到后端（servlet可以判断输入信息，前端js无需判断），判断是否有输入或输入是否正确
+user_regist  只有在输入姓名后，鼠标离开ajax会判断是否重名；其他信息在点击”注册“后，在前端js中进行判断是否有输入或输入格式是否正确
+
+
+4、jsp页面对应的数据处理servlet页面
+购物车数据库中只保存记录，但是没有数量，提交订单时再添加数量
+
+订单类中用临时Map集合存放商品-数量，遍历即可得到总价
+（map集合下放的是商品 - 商品数量的键值对，得到一个订单号，即可户得所有商品和对应数量）
+
+根据用户和商品id判断是同一个购物车（或者根据购物车的id）
+购物车中该用户已添加该商品，不重复添加
+提交订单后，清空商品-数量map集合，并删除数据库中的购物车
+
+订单付款后要改为paid状态，也可删除订单 
+添加商品和修改、删除商品（直接在该商品上操作，能获得id）不同，需要先判断管理员是否登录，再跳转add.html页面
+
+
+
+
+******************未完：
+1、查询订单和订单详情要分页
+2、用户登录页面：用鼠标失去焦点时用ajax判断是否输入或输入格式是否正确，提交后再用ajax判断登录是否正确
+      用户注册页面：用鼠标失去焦点时用ajax判断是否输入或输入格式是否正确，以及是否重名
+
+
+
+！！！！！！！用户注册ajax判断；上传github
+
+
+
+
+
+
+
+
