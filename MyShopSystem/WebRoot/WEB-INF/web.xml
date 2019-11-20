@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>MyShopSystem</display-name>
+  <servlet>
+    <servlet-name>UserRegistServlet</servlet-name>
+    <servlet-class>shop.control.UserRegistServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <servlet-class>shop.control.UserLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ValidateCodeServlet</servlet-name>
+    <servlet-class>shop.control.ValidateCodeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SelectServlet</servlet-name>
+    <servlet-class>shop.control.SelectServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddServlet</servlet-name>
+    <servlet-class>shop.control.AddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListServlet</servlet-name>
+    <servlet-class>shop.control.ListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>shop.control.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>shop.control.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateSubmitServlet</servlet-name>
+    <servlet-class>shop.control.UpdateSubmitServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShopCartServlet</servlet-name>
+    <servlet-class>shop.control.ShopCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DoFirstPageServlet</servlet-name>
+    <servlet-class>shop.control.DoFirstPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DoLastPageServlet</servlet-name>
+    <servlet-class>shop.control.DoLastPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DoGoPageServlet</servlet-name>
+    <servlet-class>shop.control.DoGoPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DoNextPageServlet</servlet-name>
+    <servlet-class>shop.control.DoNextPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DoPreviousPageServlet</servlet-name>
+    <servlet-class>shop.control.DoPreviousPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProductToCartServlet</servlet-name>
+    <servlet-class>shop.control.ProductToCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <servlet-class>shop.control.ShowCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>IncreaseCartServlet</servlet-name>
+    <servlet-class>shop.control.IncreaseCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DecreaseCartServlet</servlet-name>
+    <servlet-class>shop.control.DecreaseCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserLogoutServlet</servlet-name>
+    <servlet-class>shop.control.UserLogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteCartServlet</servlet-name>
+    <servlet-class>shop.control.DeleteCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MakeOrderServlet</servlet-name>
+    <servlet-class>shop.control.MakeOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowOrderServlet</servlet-name>
+    <servlet-class>shop.control.ShowOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderdetailServlet</servlet-name>
+    <servlet-class>shop.control.OrderdetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminiLoginServlet</servlet-name>
+    <servlet-class>shop.control.AdminiLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminiListServlet</servlet-name>
+    <servlet-class>shop.control.AdminiListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminiLogoutServlet</servlet-name>
+    <servlet-class>shop.control.AdminiLogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminiAddProServlet</servlet-name>
+    <servlet-class>shop.control.AdminiAddProServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteOrderServlet</servlet-name>
+    <servlet-class>shop.control.DeleteOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderPayServlet</servlet-name>
+    <servlet-class>shop.control.OrderPayServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserNameServlet</servlet-name>
+    <servlet-class>shop.control.UserNameServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>UserRegistServlet</servlet-name>
+    <url-pattern>/UserRegistServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <url-pattern>/UserLoginServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValidateCodeServlet</servlet-name>
+    <url-pattern>/ValidateCodeServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectServlet</servlet-name>
+    <url-pattern>/SelectServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddServlet</servlet-name>
+    <url-pattern>/AddServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListServlet</servlet-name>
+    <url-pattern>/ListServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/DeleteServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/UpdateServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateSubmitServlet</servlet-name>
+    <url-pattern>/UpdateSubmitServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShopCartServlet</servlet-name>
+    <url-pattern>/ShopCartServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DoFirstPageServlet</servlet-name>
+    <url-pattern>/DoFirstPageServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DoLastPageServlet</servlet-name>
+    <url-pattern>/DoLastPageServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DoGoPageServlet</servlet-name>
+    <url-pattern>/DoGoPageServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DoNextPageServlet</servlet-name>
+    <url-pattern>/DoNextPageServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DoPreviousPageServlet</servlet-name>
+    <url-pattern>/DoPreviousPageServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProductToCartServlet</servlet-name>
+    <url-pattern>/ProductToCartServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <url-pattern>/ShowCartServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IncreaseCartServlet</servlet-name>
+    <url-pattern>/IncreaseCartServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DecreaseCartServlet</servlet-name>
+    <url-pattern>/DecreaseCartServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLogoutServlet</servlet-name>
+    <url-pattern>/UserLogoutServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteCartServlet</servlet-name>
+    <url-pattern>/DeleteCartServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MakeOrderServlet</servlet-name>
+    <url-pattern>/MakeOrderServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowOrderServlet</servlet-name>
+    <url-pattern>/ShowOrderServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderdetailServlet</servlet-name>
+    <url-pattern>/OrderdetailServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminiLoginServlet</servlet-name>
+    <url-pattern>/AdminiLoginServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminiListServlet</servlet-name>
+    <url-pattern>/AdminiListServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminiLogoutServlet</servlet-name>
+    <url-pattern>/AdminiLogoutServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminiAddProServlet</servlet-name>
+    <url-pattern>/AdminiAddProServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteOrderServlet</servlet-name>
+    <url-pattern>/DeleteOrderServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderPayServlet</servlet-name>
+    <url-pattern>/OrderPayServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserNameServlet</servlet-name>
+    <url-pattern>/UserNameServlet.do</url-pattern>
+  </servlet-mapping>
+  
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
