@@ -114,7 +114,7 @@ user_regist  只有在输入姓名后，鼠标离开ajax会判断是否重名；
 1、查询订单和订单详情要分页
 2、用户登录页面：用鼠标失去焦点时用ajax判断是否输入或输入格式是否正确，提交后再用ajax判断登录是否正确
       用户注册页面：用鼠标失去焦点时用ajax判断是否输入或输入格式是否正确，以及是否重名
-3、根据商品名称模糊查询订单  SELECT * FROM `orderentity` where oid in (select oid from orderdetail where pname like '%iphone%');
+3、根据当前登录用户和商品名称模糊查询订单  SELECT * FROM `orderentity` where oid in (select oid from orderdetail where pname like '%iphone%') and uid=1001;  (1001为当前登录用户id)
 
 
 ！！！！！！！用户注册ajax判断；上传github
