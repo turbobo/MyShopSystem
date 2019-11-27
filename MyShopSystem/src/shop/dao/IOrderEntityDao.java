@@ -23,4 +23,6 @@ public interface IOrderEntityDao {
 	public OrderEntity selectOrderByoid(OrderEntity orderentity) throws SQLException;
 	//根据用户id查找所有订单
 	public List<OrderEntity> selectOrderByuid(User user) throws SQLException;
+	//根据用户id和商品名称模糊查找订单
+	public List<OrderEntity> selectOrderByParam(User user,String pname) throws SQLException;
 }
