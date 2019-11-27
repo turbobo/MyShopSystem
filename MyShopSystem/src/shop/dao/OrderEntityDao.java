@@ -141,6 +141,50 @@ public class OrderEntityDao implements IOrderEntityDao{
 		
 		return oes;	
 	}
+	
+	//根据用户id和商品名称模糊查找订单
+	public List<OrderEntity> selectOrderByParam(User user, String pname) throws SQLException {
+
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		List<OrderEntity> oes=new ArrayList<OrderEntity>();
+		try {
+			//获得数据库连接
+			conn=JDBCUtils.getConnection();
+			ps=conn.prepareStatement("select * from orderentity where oid in (select oid from orderdetail where pname like ?) and uid=?");
+			ps.setObject(1, "%"+pname+"%");
+			ps.setObject(2, user.getId());
+			//System.out.println("OrderEntityDao.selectOrderByParam()"+ps);
+			//执行sql语句
+			rs=ps.executeQuery();
+			while(rs.next()){
+				//将查出来的商品添加到prods中
+				oes.add(new OrderEntity(rs.getString("oid"),rs.getInt("uid"),rs.getInt("totalNum"),rs.getFloat("totalPrice"),rs.getString("status")));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			//关闭数据库连接
+			JDBCUtils.close(conn, ps, null);
+		}
+		
+		return oes;	
+		
+	
+	}
+	//测试根据用户和商品名称模糊查询订单
+//	public static void main(String[] args) {
+//		try {
+//			List<OrderEntity> o=(List<OrderEntity>) new OrderEntityDao().selectOrderByParam(UserDao.getInstance().selectByName("jack"),"reno");
+//			System.out.println("OrderEntityDao.main()"+o.get(0).getOid());
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}	
 
 
 }
