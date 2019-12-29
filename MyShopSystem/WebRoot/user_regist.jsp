@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  		<tr><td align="center" colspan="2"><strong>用户注册</strong></td></tr>
 	  		<tr><td>用户名</td><td><input id="sname" class="btn btn-default" type="text" name="sname" /></td></tr>
 	  		<tr><td>密码</td><td><input id="spassword"  class="btn btn-default" type="password" name="spassword"/></td></tr>
-	  		<tr><td>性别</td><td><input id="ssex"  class="radio-inline" type="radio" name="ssex" value="男" />男<input class="radio-inline" type="radio" name="ssex" value="女" />女</td></tr>
+	  		<tr><td>性别</td><td><input  class="radio-inline" type="radio" name="ssex" value="男" />男<input class="radio-inline" type="radio" name="ssex" value="女" />女</td></tr>
 	  		<tr><td>手机号</td><td><input id="mobile"  class="btn btn-default" type="text" name="mobile"/></td></tr>
 	  		<tr><td align="center" colspan="2"><input id="userregist" class="btn btn-success" type="button" value="注册" />&nbsp;&nbsp;&nbsp;<a href="/MyShopSystem/user_login.jsp">我已注册，去登录</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/MyShopSystem/ListServlet.do">全部商品</a></td></tr>
   		</table>
@@ -102,7 +102,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$.ajax({
 				 type: "POST", 
 				 url: "UserRegistServlet.do", //servlet地址
-				 data: {"sname" : $("#sname").val(),"spassword" : $("#spassword").val(),"ssex" : $("#ssex").val(),"mobile" : $("#mobile").val() }, 	//发送数据给servlet
+				 data: {"sname" : $("#sname").val(),"spassword" : $("#spassword").val(),"ssex" : $("input[name='ssex']:checked").val(),"mobile" : $("#mobile").val() }, 	//发送数据给servlet
 				 async : true,                  //异步
 				 dataType : "text",				//接收servlet数据类型
 				 success: function(result){     //接受的数据为result
