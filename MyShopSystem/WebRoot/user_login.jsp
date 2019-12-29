@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  		<tr><td align="center" colspan="2"><strong>用户登录</strong></td></tr>
 	  		<tr><td>用户名</td><td><input class="btn btn-default" type="text" name="sname" id="sname" /></td></tr>
 	  		<tr><td>密码</td><td><input class="btn btn-default" type="password" name="spassword" id="spassword" /></td></tr>
-	  		<tr><td>验证码</td><td><img id="imgObj" alt="验证码"  src="/MyShopSystem/user_login.jsp"  />&nbsp;</td></tr>
+	  		<tr><td>验证码</td><td><img id="imgObj" alt="验证码"  src="/MyShopSystem/ValidateCodeServlet.do?ndate="+new Date() />&nbsp;</td></tr>
 	  		<tr><td>输入验证码</td><td><input class="btn btn-default" type="text" name="validateCode" id="validateCode" /></td></tr>
   			<tr><td align="center" colspan="2"><input id="user_login" class="btn btn-success" type="button" value="登录" />
   			&nbsp;&nbsp;&nbsp;<a href="/MyShopSystem/user_regist.jsp">新用户，请注册</a>
@@ -43,10 +43,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </body>
   
   <script type="text/javascript">
-    //页面加载后 执行函数
-    window.onload = function(){
+     //页面加载后 执行函数-加载验证码
+    /*window.onload = function(){
    	   $("#imgObj").attr("src","/MyShopSystem/ValidateCodeServlet.do?ndate="+new Date());
-   }; 
+   }; */ 
    
    
   </script>
